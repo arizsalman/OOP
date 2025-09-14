@@ -92,8 +92,32 @@ class Encp:
 
 
 my_Encp = Encp("tom Brand", 'Bada', "News")
+# isinstance ye tu parameter leta he tumhara name or tuhare parent ka name!
+print(isinstance(my_Encp, Encp))
+print(isinstance(my_Encp, Inheri))
 print(my_Encp.ful())
 print(my_Encp.get_shos())
 my_Encp.set_shos('Addadas!')
 # print(my_Encp.set_shos()) ///ye error de ya vo yo ke hum is ko return nahe kar rahe he hum sirf is ko update kar rahe he (line no 91 )
 print(my_Encp.get_shos())
+
+
+class Battery:
+    def bettery_info(self):
+        return ' This car battery'
+
+
+class Engine:
+    def Engine_info(self):
+        return 'This car Engine '
+
+
+class Doule_Engine(Battery, Engine):
+    def __init__(self, Battery, Engine):
+        self.Battery = Battery
+        self.Engine = Engine
+
+
+new_car = Doule_Engine("Tesla ", 'TwoOmega')
+print(new_car.bettery_info())
+print(new_car.Engine_info())
